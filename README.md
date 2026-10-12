@@ -11,7 +11,7 @@ To prevent this without introducing heavy message brokers like Kafka or RabbitMQ
 
 > Note: This Throttler branch focuses on measuring the baseline latency and performance when users hit the API, with rate limiters (throttler) by nest.js without reddis caching storage, or authentication.
 
-## Throttler Configutarion
+## Throttler Configuration
 Configure the Nest Throttler with two layers for a seconds and a minute for available request to hits, whit the minimum up to 5 request per seconds and maximum 200 per minute to prevent the DDos attacks, without reddis caching storage and auhtentication system.
 
 ### Configuration Code:
