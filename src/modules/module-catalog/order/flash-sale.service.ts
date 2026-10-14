@@ -21,11 +21,11 @@ export class FlashSaleService {
             });
 
             if (!product) {
-                throw new BadRequestException('not found');
+                throw new BadRequestException('not found!');
             }
 
             if (product.stock < quantityRequested) {
-                throw new BadRequestException('out of stock');
+                throw new BadRequestException('out of stock!');
             }
 
             product.stock -= quantityRequested;
