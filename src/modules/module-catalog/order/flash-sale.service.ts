@@ -21,11 +21,11 @@ export class FlashSaleService {
             });
 
             if (!product) {
-                throw new BadRequestException('Produk tidak ditemukan');
+                throw new BadRequestException('product not found');
             }
 
             if (product.stock < quantityRequested) {
-                throw new BadRequestException('Mohon maaf, stok tidak mencukupi atau sudah habis!');
+                throw new BadRequestException('out of stock');
             }
 
             product.stock -= quantityRequested;
@@ -54,7 +54,7 @@ export class FlashSaleService {
             return savedOrder;
 
         } catch (error) {
-            console.error('ALASAN SERVER CRASH:', error);
+            console.error('SERVER CRASH:', error);
             await queryRunner.rollbackTransaction();
             throw error;
         } finally {
