@@ -11,11 +11,11 @@ To prevent this without introducing heavy message brokers like Kafka or RabbitMQ
 
 > Note: This Throttler branch focuses on measuring the baseline latency and performance when users hit the API, with rate limiters (throttler) by nest.js without reddis caching storage, or authentication.
 
-## Throttler Configutarion
-Configure the Nest Throttler with two layers for a seconds and a minute for available request to hits, whit the minimum up to 5 request per seconds and maximum 200 per minute to prevent the DDos attacks, without reddis caching storage and auhtentication system.
+## Throttler Configuration
+Configure the Nest Throttler with two layers for a seconds and a minute for available request to hits, with the minimum up to 5 request per seconds and maximum 200 per minute to prevent the DDos attacks, without reddis caching storage and authentication system.
 
 ### Configuration Code:
-* **Throttler Moduler:**
+* **Throttler Module:**
 ```text
 import { ThrottlerModule } from "@nestjs/throttler";
 
@@ -58,7 +58,7 @@ This system was stress-tested using **Grafana K6** with the following parameters
         
         * **Long Layer:** When 220 requests with the same IP wants to hit API with 300 miliseconds pause (~3 request per seconds) in total 120 seconds, short layer passed the request and the request never reach the limit of the long layer (rejecting request with 400 errors).
     
-    * At the massive VUs with **~49.000** in 15 seconds, the server successfully resistance when get hit by **7.500 VUs** per seconds by 100 VUs with different IP, the database safely processing few request (75 VUs) the stock stopped exactly at 0, and the rest of request get rejecting by **Throttler**. The reason why the rest of limit on long layer (125) get rejected, because in the first seconds when 7.500 VUs hits the short layer just let in the first 5 request per IP following the system of **throttler** so in total of 100 VUs times 5 limit in short layer is become 75 and long layer is never running because the short layer is rejeceting the rest of VUs.
+    * At the massive VUs with **~49.000** in 15 seconds, the server successfully resisted when get hit by **7.500 VUs** per seconds by 100 VUs with different IP, the database safely processing few request (75 VUs) the stock stopped exactly at 0, and the rest of request get rejecting by **Throttler**. The reason why the rest of limit on long layer (125) get rejected, because in the first seconds when 7.500 VUs hits the short layer just let in the first 5 request per IP following the system of **throttler** so in total of 100 VUs times 5 limit in short layer is become 75 and long layer is never running because the short layer is rejeceting the rest of VUs.
 
 ### K6 Metric Results:
 * **220 VUs with the same IP (Stable):**
