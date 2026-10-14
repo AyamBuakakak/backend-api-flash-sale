@@ -9,12 +9,12 @@ To prevent this without introducing heavy message brokers like Kafka or RabbitMQ
 *   **Pessimistic Locking (`SELECT ... FOR UPDATE`):** Enforced via TypeORM's `queryRunner` to queue concurrent requests at the database engine level (PostgreSQL).
 *   **ACID Transactions:** Ensuring that the stock decrement and order creation are treated as a single atomic operation.
 
-> Note: This Throttler-Reddis branch focus on optimizing data fetching with Redis when users hit the API, with rate limiters (throttler) by nest.js + reddis caching storage without authentication.
+> Note: This Throttler-Redis branch focus on optimizing data fetching with Redis when users hit the API, with rate limiters (throttler) by nest.js + reddis caching storage without authentication.
 
 ## Throttler Configuration
-Configure the redis with docker server for available request to hits api with caching data, make a docker file contening with configuration code, and run with docker CLI.
+Configure the redis with docker server for available request to hits api with caching data, create a docker-compose file containing the configuration code, and run with docker CLI.
 
-### Docker File:
+### Docker Compose Configuration:
 ```yaml
 services:
   redis-dev:
@@ -41,7 +41,7 @@ docker-compose -f docker-compose.dev.yml up -d
 ## Benchmark & Stress Testing (K6)
 This system was stress-tested using **Grafana K6** with the following parameters:
 *   **Virtual Users (Concurrent):** 20 VUs with distinct IP injection (X-Forwarded-For).
-*   **Test Duration:** 0 seconds with a 1-second staggered delay.
+*   **Test Duration:** 30 seconds with a 1-second staggered delay.
 
 ### Summary of Results:
 *   [x] **Performance Optimization:** Implemented a robust Redis caching layer using custom NestJS Interceptors for read-heavy operations (GET endpoints). Successfully reduced response latency from ~68ms (Database Query) to < 2ms (Memory Cache Hit), achieving a ~97% performance improvement validated via k6 load testing.
