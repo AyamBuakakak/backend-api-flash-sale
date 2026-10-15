@@ -156,6 +156,12 @@ This system was stress-tested using **Grafana K6** with the following parameters
 ## Database Schema
 <img width="466" height="531" alt="ERD PostgreSQL" src="https://github.com/user-attachments/assets/7b34fa76-61a1-403d-bb00-23ae623f3d20" />
 
+## Project Iterations & Branches
+This project was developed in stages to simulate real-world problem solving. You can explore the evolution of the system by switching branches:
+
+*   **[`main`](https://github.com/AyamBuakakak/backend-api-flash-sale/tree/main)** : The core REST API functionality and database schema for the flash sale system.
+*   **[`throttler`](https://github.com/AyamBuakakak/backend-api-flash-sale/tree/throttler)** : Introduction of basic Rate Limiting to prevent server overload and spam requests.
+*   **[`throttler-redis`](https://github.com/AyamBuakakak/backend-api-flash-sale/tree/throttler-redis)** : Upgraded the throttling mechanism by integrating **Redis** and **Docker** for high-performance, real-time distributed caching.
 
 ## How to Run Locally
 * Clone this repository: `git clone <your-repo-url>`
