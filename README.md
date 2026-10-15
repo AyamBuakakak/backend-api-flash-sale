@@ -147,14 +147,14 @@ This system was stress-tested using **Grafana K6** with the following parameters
     ✓ test/app.e2e-spec.ts (1 test)
     ```
 
+## Database Schema
+<img width="466" height="531" alt="ERD PostgreSQL" src="https://github.com/user-attachments/assets/7b34fa76-61a1-403d-bb00-23ae623f3d20" />
+
 ## Tech Stack
 * Framework: NestJS (Node.js)
 * Database: PostgreSQL
 * ORM: TypeORM
 * Testing: K6 (Load Testing), Vitest & Supertest (Unit & E2E Testing)
-
-## Database Schema
-<img width="466" height="531" alt="ERD PostgreSQL" src="https://github.com/user-attachments/assets/7b34fa76-61a1-403d-bb00-23ae623f3d20" />
 
 ## Project Iterations & Branches
 This project was developed in stages to simulate real-world problem solving. You can explore the evolution of the system by switching branches:
