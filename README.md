@@ -107,6 +107,13 @@ http_reqs......................: 20     0.999798/s
 * ORM: TypeORM
 * Testing: K6 (Load Testing), Vitest & Supertest (Unit & E2E Testing)
 
+## Project Iterations & Branches
+This project was developed in stages to simulate real-world problem solving. You can explore the evolution of the system by switching branches:
+
+*   **[`main`](https://github.com/AyamBuakakak/backend-api-flash-sale/tree/main)** : The core REST API functionality and database schema for the flash sale system.
+*   **[`throttler`](https://github.com/AyamBuakakak/backend-api-flash-sale/tree/throttler)** : Introduction of basic Rate Limiting to prevent server overload and spam requests.
+*   **[`throttler-redis`](https://github.com/AyamBuakakak/backend-api-flash-sale/tree/throttler-redis)** : Upgraded the throttling mechanism by integrating **Redis** and **Docker** for high-performance, real-time distributed caching.
+
 ## How to Run Locally
 * Clone this repository: `git clone <your-repo-url>`
 * Start the database using Docker: `docker-compose up -d`
