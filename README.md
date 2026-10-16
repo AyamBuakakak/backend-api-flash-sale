@@ -100,6 +100,11 @@ http_reqs......................: 20     0.999798/s
     }
     ✓ test/app.e2e-spec.ts (1 test)
     ```
+## Database Schema
+<img width="466" height="531" alt="ERD PostgreSQL" src="https://github.com/user-attachments/assets/353f84db-ca2f-498b-8e20-b95060e5e97c" />
+
+## Core System Architecture
+<img width="7238" height="4604" alt="flow system throttler-redis" src="https://github.com/user-attachments/assets/ddad32c6-7304-40e8-9578-ef377372b156" />
 
 ## Tech Stack
 * Framework: NestJS (Node.js)
