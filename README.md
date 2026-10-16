@@ -107,6 +107,9 @@ http_req_failed..: 88.20% 882 out of 1000
 ## Database Schema
 <img width="385" height="395" alt="Screenshot 2026-10-07 052443" src="https://github.com/user-attachments/assets/068f430d-efb8-4eef-bea4-e77c73dc0198" />
 
+## Core System Architecture
+<img width="6178" height="3121" alt="flow system" src="https://github.com/user-attachments/assets/878f04a8-66a8-405c-addf-f97f86659b8c" />
+
 
 ## Tech Stack
 * Framework: NestJS (Node.js)
