@@ -150,6 +150,10 @@ This system was stress-tested using **Grafana K6** with the following parameters
 ## Database Schema
 <img width="466" height="531" alt="ERD PostgreSQL" src="https://github.com/user-attachments/assets/7b34fa76-61a1-403d-bb00-23ae623f3d20" />
 
+## Core System Architecture
+<img width="6178" height="3121" alt="flow system throttler" src="https://github.com/user-attachments/assets/0cbf77bf-3bcc-4951-8607-7ac82004fbe4" />
+
+
 ## Tech Stack
 * Framework: NestJS (Node.js)
 * Database: PostgreSQL
