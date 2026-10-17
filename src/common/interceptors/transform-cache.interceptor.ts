@@ -51,10 +51,10 @@ export class TransformAndCacheInterceptor implements NestInterceptor {
         if (isGetRequest) {
             const cachedData = await this.cacheManager.get(cacheKey);
             if (cachedData) {
-                console.log(`[Cache Hit] Data dikembalikan dari Redis untuk key: ${cacheKey}`);
+                console.log(`[Cache Hit] Data return from Redis for key: ${cacheKey}`);
                 return of(cachedData);
             }
-            console.log(`[Cache Miss] Data tidak ada di Redis. Meneruskan ke Controller...`);
+            console.log(`[Cache Miss] Data was not found Redis.`);
         }
 
         return next.handle().pipe(
